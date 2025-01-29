@@ -11,3 +11,4 @@ class Round:
         self.matches = match_list  # Liste des matchs (tuples contenant les joueurs et leurs scores)
         self.start_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # Timestamp au début
         self.end_time = None  # Sera défini lorsque le round sera terminé
+

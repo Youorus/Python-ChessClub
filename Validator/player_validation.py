@@ -1,6 +1,9 @@
 import re
 from datetime import datetime
 
+from Execption.player_execption import NationalIdInvalidException, NameInvalidException, FutureDateException, \
+    DateOfBirthInvalidException
+
 
 def validate_national_id(national_id: str) -> str:
     """Vérifie si le National ID est valide (2 lettres suivies de 5 chiffres)."""

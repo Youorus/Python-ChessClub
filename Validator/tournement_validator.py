@@ -1,7 +1,8 @@
 import re
 from datetime import datetime
-from exceptions import InvalidNameException, InvalidLocationException, InvalidDateException, PastEndDateException, \
-    InvalidRoundsTotalException
+
+from Execption.tournement_execption import InvalidNameException, InvalidLocationException, InvalidDateException, \
+    PastEndDateException, InvalidRoundsTotalException
 
 
 def validate_tournament_name(name: str) -> str:
@@ -11,26 +12,19 @@ def validate_tournament_name(name: str) -> str:
     return name.strip().title()
 
 
-def validate_location(location: str) -> str:
-    """Vérifie que le lieu du tournoi est valide."""
-    if not re.match(r"^[A-Za-zÀ-ÖØ-öø-ÿ -]{3,50}$", location):
-        raise InvalidLocationException("Le lieu du tournoi doit contenir entre 3 et 50 caractères valides.")
-    return location.strip().title()
-
-
 def validate_date(date_str: str) -> str:
-    """Vérifie que la date est au format YYYY-MM-DD et est une date valide."""
+    """Vérifie que la date est au format européen (JJ/MM/AAAA) et est une date valide."""
     try:
-        date_obj = datetime.strptime(date_str, "%Y-%m-%d")
+        date_obj = datetime.strptime(date_str, "%d/%m/%Y")  # Format JJ/MM/AAAA
         return date_str
     except ValueError:
-        raise InvalidDateException()
+        raise InvalidDateException("La date doit être au format JJ/MM/AAAA et valide.")
 
 
 def validate_tournament_dates(start_date: str, end_date: str) -> tuple:
     """Vérifie que la date de fin du tournoi n'est pas avant la date de début."""
-    start = datetime.strptime(start_date, "%Y-%m-%d")
-    end = datetime.strptime(end_date, "%Y-%m-%d")
+    start = datetime.strptime(start_date, "%d/%m/%Y")  # Format JJ/MM/AAAA
+    end = datetime.strptime(end_date, "%d/%m/%Y")  # Format JJ/MM/AAAA
 
     if end < start:
         raise PastEndDateException()
