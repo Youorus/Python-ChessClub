@@ -22,3 +22,8 @@ class FutureDateException(DateOfBirthInvalidException):
     """Exception pour une date de naissance dans le futur."""
     def __init__(self):
         super().__init__("La date de naissance ne peut pas être dans le futur.")
+
+class PlayerAlreadyExistsException(PlayerExecption):
+    """Exception pour un joueur déjà enregistré."""
+    def __init__(self, national_id):
+        super().__init__(f"⚠️ Joueur avec le National ID '{national_id}' est déjà enregistré.")
