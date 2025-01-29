@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="260008cc-a027-4c76-9e97-07af7ef236dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Validator/player_validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Validator/player_validation.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +37,7 @@
     "Python.Joueur.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Model",
+    "git-widget-placeholder": "validation",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -66,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1738162146018</updated>
-      <workItem from="1738162147514" duration="5410000" />
+      <workItem from="1738162147514" duration="6249000" />
     </task>
     <servers />
   </component>
