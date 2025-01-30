@@ -16,3 +16,15 @@ class Tournament:
         self.rounds: List['Round'] = round_list if round_list is not None else []
         self.players: List['Player'] = player_list if player_list is not None else []
         self.description: str = description
+
+
+    def to_dict(self):
+        """Convertit un objet Tournament en dictionnaire JSON-compatible."""
+        return {
+            "name": self.name,
+            "location": self.location,
+            "start_date": self.start_date,
+            "end_date": self.end_date,
+            "rounds_total": self.rounds_total,
+            "description": self.description
+        }

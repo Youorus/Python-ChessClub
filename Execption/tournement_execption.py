@@ -27,3 +27,7 @@ class InvalidRoundsTotalException(TournamentException):
     def __init__(self):
         super().__init__("Le nombre de rounds doit être un entier positif supérieur à 0.")
 
+class TournamentAlreadyExistsException(TournamentException):
+    """Exception levée lorsqu'un tournoi avec le même nom, lieu et date existe déjà."""
+    def __init__(self, tournament_name: str, location: str, date: str):
+        super().__init__(f"Le tournoi '{tournament_name}' à '{location}' prévu pour le {date} existe déjà dans la base de données.")
