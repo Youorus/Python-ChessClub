@@ -1,12 +1,11 @@
 class Player:
     """Modèle représentant un joueur d'échecs."""
 
-    def __init__(self, national_id, last_name, first_name, dob, points=0):
+    def __init__(self, national_id, last_name, first_name, dob):
         self.national_id = national_id
         self.last_name = last_name
         self.first_name = first_name
         self.dob = dob
-        self.points = points  # ✅ Ajout de points
 
     def __str__(self):
         """Affiche les informations du joueur."""
@@ -25,20 +24,18 @@ class Player:
     def to_dict(self):
         """Convertit un objet Player en dictionnaire JSON."""
         return {
-            "id": self.national_id,
+            "national_id": self.national_id,
             "first_name": self.first_name,
             "last_name": self.last_name,
             "dob": self.dob,
-            "points": self.points
         }
 
     @classmethod
     def from_dict(cls, data):
-        """ Convertit un dictionnaire en objet Player """
+        """Convertit un dictionnaire en objet Player"""
         return cls(
             national_id=data["national_id"],
             last_name=data["last_name"],
             first_name=data["first_name"],
             dob=data["dob"],
-            points=data.get("points", 0)  # ✅ Correction
         )

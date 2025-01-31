@@ -1,13 +1,21 @@
 import os
-from View.players_view import all_players_view
-from View.tournaments_view import all_tournaments_view, tournament_details_menu
-from View.menu_view import menu
+
+from Controller.Tournement_Controller import TournamentController
+from View.all_players_view import all_players_view
+from View.all_tournement_view import display_all_tournaments, select_tournament
+from View.tournement_menu_view import tournament_details_menu
+
 
 def rapport_menu():
     """
     Affiche le menu des rapports et gère la navigation utilisateur.
     """
-    menu_options = ["Liste des joueurs", "Liste des tournois", "Voir les détails d'un tournoi", "Retour"]
+    menu_options = [
+        "Liste des joueurs",
+        "Liste des tournois",
+        "Voir les détails d'un tournoi",
+        "Retour",
+    ]
 
     while True:
         os.system("clear" if os.name == "posix" else "cls")
@@ -19,14 +27,17 @@ def rapport_menu():
         choix = input("\nEntrez un choix (1-4) : ").strip()
 
         if choix == "1":
-            all_players_view()  # Vue pour afficher les joueurs
+            all_players_view()  # Afficher la liste des joueurs
         elif choix == "2":
-            all_tournaments_view()  # Vue pour afficher les tournois
+            display_all_tournaments(
+                TournamentController.get_all_tournaments()
+            )  # Afficher les tournois
         elif choix == "3":
-            tournament_details_menu()  # Afficher les joueurs et rounds d'un tournoi
+            tournament = select_tournament()  # Sélectionner un tournoi
+            if tournament:  # ✅ Si un tournoi est sélectionné, on affiche ses détails
+                tournament_details_menu(tournament)
         elif choix == "4":
-            menu()  # Retour au menu principal
-            break
+            return  # Retour au menu principal
         else:
             print("❌ Entrée invalide. Veuillez entrer un nombre entre 1 et 4.")
             input("Appuyez sur Entrée pour continuer...")

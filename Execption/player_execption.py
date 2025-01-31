@@ -1,12 +1,16 @@
 class PlayerExecption(Exception):
     """Exception de base pour les erreurs de validation."""
+
     pass
 
 
 class NationalIdInvalidException(PlayerExecption):
     """Exception pour un National ID invalide."""
 
-    def __init__(self, message="Le National ID doit contenir exactement 2 lettres suivies de 5 chiffres (ex: AB12345)."):
+    def __init__(
+        self,
+        message="Le National ID doit contenir exactement 2 lettres suivies de 5 chiffres (ex: AB12345).",
+    ):
         super().__init__(message)
 
 
@@ -21,7 +25,9 @@ class NameInvalidException(PlayerExecption):
 class DateOfBirthInvalidException(PlayerExecption):
     """Exception pour une date de naissance invalide."""
 
-    def __init__(self, message="La date de naissance doit être au format JJ/MM/AAAA et valide."):
+    def __init__(
+        self, message="La date de naissance doit être au format JJ/MM/AAAA et valide."
+    ):
         super().__init__(message)
 
 
@@ -37,4 +43,5 @@ class PlayerAlreadyExistsException(PlayerExecption):
 
     def __init__(self, national_id):
         super().__init__(
-            f"⚠️ Joueur avec le National ID '{national_id}' est déjà enregistré.")
+            f"⚠️ Joueur avec le National ID '{national_id}' est déjà enregistré."
+        )

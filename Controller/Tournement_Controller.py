@@ -18,11 +18,20 @@ class TournamentController:
         #  Vérifier si les joueurs sont bien des objets Player et les convertir si nécessaire
         players = [Player.from_dict(player) for player in players_list]
 
+        round_list = RoundController.generate_rounds(
+            rounds_total, players
+        )  # ✅ Génération des rounds
 
-        round_list = RoundController.generate_rounds(rounds_total, players)  # ✅ Génération des rounds
-
-        new_tournament = Tournament(name, location, start_date, end_date, rounds_total, round_list, players,
-                                    description)
+        new_tournament = Tournament(
+            name,
+            location,
+            start_date,
+            end_date,
+            rounds_total,
+            round_list,
+            players,
+            description,
+        )
 
         save_tournament(new_tournament)  # ✅ Sauvegarde
         return new_tournament

@@ -11,6 +11,6 @@ def show_tournament_rounds(tournament):
 
     print(f"\n=== Rounds du Tournoi {tournament.name} ===\n")
     for round_ in tournament.rounds:
-        print(round_)
+        print(round_.__str__())
 
     input("\nAppuyez sur Entrée pour revenir au menu...")

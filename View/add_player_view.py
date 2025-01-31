@@ -1,8 +1,17 @@
 import os
 
 from Controller.Player_controller import PlayerController
-from Validator.player_validation import validate_national_id, validate_name, validate_dob
-from Execption.player_execption import NationalIdInvalidException, NameInvalidException, FutureDateException, DateOfBirthInvalidException
+from Validator.player_validation import (
+    validate_national_id,
+    validate_name,
+    validate_dob,
+)
+from Execption.player_execption import (
+    NationalIdInvalidException,
+    NameInvalidException,
+    FutureDateException,
+    DateOfBirthInvalidException,
+)
 
 
 def add_player_form():
@@ -13,15 +22,15 @@ def add_player_form():
     while True:
         try:
             national_id = validate_national_id(
-                input("🆔 Entrez l'ID du joueur (ex: AB12345) : ").strip())
+                input("🆔 Entrez l'ID du joueur (ex: AB12345) : ").strip()
+            )
             break
         except NationalIdInvalidException as e:
             print(f"❌ Erreur : {e}")
 
     while True:
         try:
-            last_name = validate_name(
-                input("👤 Entrez le nom de famille : ").strip())
+            last_name = validate_name(input("👤 Entrez le nom de famille : ").strip())
             break
         except NameInvalidException as e:
             print(f"❌ Erreur : {e}")
@@ -36,13 +45,13 @@ def add_player_form():
     while True:
         try:
             dob = validate_dob(
-                input("📅 Entrez la date de naissance (JJ/MM/AAAA) : ").strip())
+                input("📅 Entrez la date de naissance (JJ/MM/AAAA) : ").strip()
+            )
             break
         except (FutureDateException, DateOfBirthInvalidException) as e:
             print(f"❌ Erreur : {e}")
 
-    new_player = PlayerController.add_player(
-        national_id, last_name, first_name, dob)
+    new_player = PlayerController.add_player(national_id, last_name, first_name, dob)
 
     # Nettoie l'écran après saisie
     os.system("clear" if os.name == "posix" else "cls")

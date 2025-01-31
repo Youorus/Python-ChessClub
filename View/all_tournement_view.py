@@ -1,5 +1,6 @@
 from Controller.Tournement_Controller import TournamentController
 
+
 def select_tournament():
     """
     Permet de sélectionner un tournoi par son numéro.
@@ -17,7 +18,9 @@ def select_tournament():
 
     while True:
         try:
-            choix = int(input("\nEntrez le numéro du tournoi (ou 0 pour annuler) : ").strip())
+            choix = int(
+                input("\nEntrez le numéro du tournoi (ou 0 pour annuler) : ").strip()
+            )
             if choix == 0:
                 return None
             if 1 <= choix <= len(tournaments):
@@ -27,14 +30,13 @@ def select_tournament():
             print("❌ Entrée invalide. Entrez un numéro valide.")
 
 
-
 def display_all_tournaments(tournaments):
     """
-      Affiche la liste des tournois enregistrés.
+    Affiche la liste des tournois enregistrés.
 
-      Args:
-          tournaments (List[Tournament]): Liste des tournois.
-      """
+    Args:
+        tournaments (List[Tournament]): Liste des tournois.
+    """
     if not tournaments:
         print("\nAucun tournoi enregistré.")
         return

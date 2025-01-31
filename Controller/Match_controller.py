@@ -9,16 +9,22 @@ class MatchController:
     """Gère l'organisation des matchs et l'attribution des scores."""
 
     @staticmethod
-    def generate_matches(players: List[Player], past_matches: Set[Tuple[Player, Player]]) -> List[Match]:
+    def generate_matches(
+        players: List[Player], past_matches: Set[Tuple[Player, Player]]
+    ) -> List[Match]:
         """
-        Génère des matchs en s'assurant que les mêmes joueurs ne se rencontrent pas plus d'une fois.
+        Génère des matchs en s'assurant que
+        les mêmes joueurs ne se rencontrent pas plus d'une fois.
 
-        Cette fonction génère une liste de matchs en fonction des joueurs disponibles et des rencontres déjà effectuées.
-        Elle vérifie si les joueurs ont déjà joué ensemble et ajuste les paires pour éviter les répétitions.
+        Cette fonction génère une liste de matchs en fonction
+        des joueurs disponibles et des rencontres déjà effectuées.
+        Elle vérifie si les joueurs ont déjà joué ensemble
+        et ajuste les paires pour éviter les répétitions.
 
         Args:
             players (List[Player]): Liste des joueurs participant au tournoi.
-            past_matches (Set[Tuple[Player, Player]]): Ensemble des matchs déjà joués sous forme de tuples (Player, Player).
+            past_matches (Set[Tuple[Player, Player]]):
+            Ensemble des matchs déjà joués sous forme de tuples (Player, Player).
 
         Returns:
             List[Match]: Liste des matchs générés.
@@ -28,8 +34,6 @@ class MatchController:
         if len(players) < 2:
             print("Impossible de générer des matchs : il faut au moins deux joueurs.")
             return []
-
-
 
         # Mélange aléatoire des joueurs (uniquement pour le premier round)
         random.shuffle(players)
@@ -47,14 +51,18 @@ class MatchController:
                 while j < len(players):
                     alternate_player = players[j]
                     if (player1, alternate_player) not in past_matches and (
-                    alternate_player, player1) not in past_matches:
+                        alternate_player,
+                        player1,
+                    ) not in past_matches:
                         player2 = alternate_player
                         players[i + 1], players[j] = players[j], players[i + 1]
                         break
                     j += 1
                 else:
                     # Aucun autre joueur disponible, on saute ce tour
-                    print(f"Impossible de trouver un adversaire pour {player1.first_name} {player1.last_name}.")
+                    print(
+                        f"Impossible de trouver un adversaire pour {player1.first_name} {player1.last_name}."
+                    )
                     i += 1
                     continue
 
@@ -68,5 +76,3 @@ class MatchController:
             i += 2  # Passage aux joueurs suivants
 
         return matches
-
-

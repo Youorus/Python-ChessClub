@@ -1,15 +1,21 @@
-from View.all_tournement_view import select_tournament
+from View.show_tournament_players import show_tournament_players
+from View.show_tournament_rounds import show_tournament_rounds
 
 
-def tournament_details_menu():
+def tournament_details_menu(tournament):
     """
     Menu permettant de voir les joueurs ou les rounds d'un tournoi spécifique.
     """
-    tournament = select_tournament()
     if not tournament:
-        return  # Annulation si aucun tournoi sélectionné
+        print("\n❌ Aucun tournoi sélectionné. Retour au menu.")
+        input("Appuyez sur Entrée pour continuer...")
+        return
 
-    menu_options = ["Voir les joueurs du tournoi", "Voir les rounds du tournoi", "Retour"]
+    menu_options = [
+        "Voir les joueurs du tournoi",
+        "Voir les rounds du tournoi",
+        "Retour",
+    ]
 
     while True:
         print(f"\n=== Détails du Tournoi : {tournament.name} ===\n")

@@ -1,8 +1,11 @@
 import re
 from datetime import datetime
 from Execption.tournement_execption import (
-    InvalidNameException, InvalidLocationException, InvalidDateException,
-    PastEndDateException, InvalidRoundsTotalException
+    InvalidNameException,
+    InvalidLocationException,
+    InvalidDateException,
+    PastEndDateException,
+    InvalidRoundsTotalException,
 )
 
 
@@ -26,7 +29,8 @@ def validate_date(date_str: str) -> str:
         date_obj = datetime.strptime(date_str, "%d/%m/%Y")  # Format européen
         if date_obj.year < 1900 or date_obj.year > 2100:
             raise InvalidDateException(
-                "L'année du tournoi doit être comprise entre 1900 et 2100.")
+                "L'année du tournoi doit être comprise entre 1900 et 2100."
+            )
         return date_str
     except ValueError:
         raise InvalidDateException()
@@ -54,4 +58,5 @@ def validate_rounds_total(rounds_total: str) -> int:
         return rounds_total
     except ValueError:
         raise InvalidRoundsTotalException(
-            "Veuillez entrer un nombre entier valide pour les rounds.")
+            "Veuillez entrer un nombre entier valide pour les rounds."
+        )

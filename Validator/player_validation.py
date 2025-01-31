@@ -1,8 +1,12 @@
 import re
 from datetime import datetime
 
-from Execption.player_execption import NationalIdInvalidException, NameInvalidException, FutureDateException, \
-    DateOfBirthInvalidException
+from Execption.player_execption import (
+    NationalIdInvalidException,
+    NameInvalidException,
+    FutureDateException,
+    DateOfBirthInvalidException,
+)
 
 
 def validate_national_id(national_id: str) -> str:
