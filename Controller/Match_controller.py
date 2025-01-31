@@ -1,7 +1,6 @@
 import random
 from typing import Tuple, Set, List
 
-from Controller.save_to_JSON import load_players
 from Model import Player
 from Model.Match import Match
 

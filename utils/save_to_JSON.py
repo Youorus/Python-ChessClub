@@ -4,6 +4,7 @@ from typing import List
 from Execption.player_execption import PlayerAlreadyExistsException
 from Execption.tournement_execption import TournamentAlreadyExistsException
 from Model import Tournament, Player
+from utils.load_from_JSON import load_json
 
 #  Chemins centralisés pour une meilleure gestion
 DATA_DIR = "data"
@@ -11,7 +12,6 @@ TOURNAMENTS_FILE = os.path.join(DATA_DIR, "tournaments.json")
 PLAYERS_FILE = os.path.join(DATA_DIR, "players.json")
 
 #  Fonction pour s'assurer que le fichier et le dossier existent
-
 
 def ensure_file_exists(file_path: str):
     """Crée le dossier et le fichier JSON s'ils n'existent pas."""
@@ -23,17 +23,6 @@ def ensure_file_exists(file_path: str):
 
 #  Fonction pour charger un fichier JSON en toute sécurité
 
-
-def load_json(file_path: str) -> List[dict]:
-    """Charge un fichier JSON et retourne son contenu, ou une liste vide si le fichier est vide/non existant."""
-    ensure_file_exists(file_path)  # ✅ S'assure que le fichier existe
-    with open(file_path, "r", encoding="utf-8") as file:
-        try:
-            return json.load(file)
-        except json.JSONDecodeError:
-            return []  # Retourne une liste vide en cas d'erreur de lecture
-
-#  Fonction pour sauvegarder un fichier JSON
 
 
 def save_json(file_path: str, data: list):
@@ -74,25 +63,4 @@ def save_player(player: Player) -> bool:
     save_json(PLAYERS_FILE, players)  # 💾 Sauvegarde les données
     return True
 
-# ✅ Charger les tournois
 
-
-def load_tournaments() -> List[Tournament]:
-    """Charge les tournois depuis le fichier JSON."""
-    return load_json(TOURNAMENTS_FILE)
-
-# Charger les joueurs
-
-
-def load_players() -> List[Player]:
-    """Charge les joueurs depuis le fichier JSON et retourne une liste de `Player`."""
-    players_data = load_json(PLAYERS_FILE)  # ✅ Charger les joueurs depuis JSON
-    # ✅ Convertir chaque dictionnaire en `Player`
-    return [player for player in players_data]
-
-
-def load_players_names() -> List[str]:
-    """Charge les joueurs depuis le fichier JSON et retourne une liste de noms complets (Prénom Nom)."""
-    players_data = load_json(PLAYERS_FILE)
-    # ✅Concatène prénom et nom
-    return [f"{player['first_name']} {player['last_name']}" for player in players_data]

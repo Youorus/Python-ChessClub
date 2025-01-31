@@ -1,5 +1,5 @@
 from Controller.Round_controller import RoundController
-from Controller.save_to_JSON import save_tournament, load_players
+from utils.save_to_JSON import save_tournament, load_players
 from Model.Player import Player
 from Model.Tournament import Tournament
 
@@ -14,8 +14,6 @@ class TournamentController:
 
         #  Vérifier si les joueurs sont bien des objets Player et les convertir si nécessaire
         players = [Player.from_dict(player) for player in players_list]
-
-        print(players)
 
 
         round_list = RoundController.generate_rounds(rounds_total, players)  # ✅ Génération des rounds
