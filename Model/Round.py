@@ -2,6 +2,7 @@ from datetime import datetime
 from typing import List
 
 from Model.Match import Match
+from Model.Player import Player
 
 
 class Round:
@@ -38,3 +39,35 @@ class Round:
             # Inclut tous les matchs
             "matches": [match.to_dict() for match in self.matches],
         }
+
+    @classmethod
+    def from_dict(cls, data: dict) -> "Round":
+        matches_data = data.get("matches", [])
+
+        fixed_matches = []
+        for match in matches_data:
+            if not isinstance(match, dict):
+                print(f"❌ Erreur : Match invalide (Type: {type(match)})")
+                continue
+
+            player1_data = match.get("player1")
+            player2_data = match.get("player2")
+
+            fixed_matches.append({
+                "player1": player1_data.to_dict() if isinstance(player1_data, Player) else player1_data,
+                "score1": match["score1"],
+                "player2": player2_data.to_dict() if isinstance(player2_data, Player) else player2_data,
+                "score2": match["score2"]
+            })
+
+        return cls(
+            round_id=data["round_id"],
+            match_list=[
+                Match(
+                    player1=Player.from_dict(match["player1"]) if isinstance(match["player1"], dict) else None,
+                    score1=match["score1"],
+                    player2=Player.from_dict(match["player2"]) if isinstance(match["player2"], dict) else None,
+                    score2=match["score2"]
+                ) for match in fixed_matches
+            ]
+        )
