@@ -1,5 +1,8 @@
+from typing import List
+
 from Controller.Round_controller import RoundController
-from utils.save_to_JSON import save_tournament, load_players
+from utils.load_from_JSON import load_players, load_tournaments
+from utils.save_to_JSON import save_tournament
 from Model.Player import Player
 from Model.Tournament import Tournament
 
@@ -23,3 +26,19 @@ class TournamentController:
 
         save_tournament(new_tournament)  # ✅ Sauvegarde
         return new_tournament
+
+    @staticmethod
+    def get_all_tournaments() -> List[Tournament]:
+        """
+        Retourne tous les tournois enregistrés sous forme d'objets Tournament.
+
+        Returns:
+            List[Tournament]: Liste des tournois en tant qu'objets Tournament.
+        """
+        tournaments_data = load_tournaments()
+
+        if not tournaments_data:
+            return []
+
+        # Convertir chaque dictionnaire en objet `Tournament` avec from_dict()
+        return [Tournament.from_dict(data) for data in tournaments_data]

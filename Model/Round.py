@@ -28,6 +28,7 @@ class Round:
             f"⚔️ Matchs :\n{match_details}\n"
         )
 
+
     def to_dict(self):
         """Convertit l'objet Round en dictionnaire pour JSON."""
         return {
@@ -36,6 +37,18 @@ class Round:
             "matches": [match.to_dict() for match in self.matches]
         }
 
-    def end_round(self):
-        """Marque la fin du round."""
-        self.end_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    @classmethod
+    def from_dict(cls, data: dict) -> "Round":
+        """
+        Convertit un dictionnaire JSON en objet `Round`.
+
+        Args:
+            data (dict): Dictionnaire représentant un round.
+
+        Returns:
+            Round: Instance de la classe `Round`.
+        """
+        return cls(
+            round_id=data["round_id"],
+            match_list=[Match.from_dict(match) for match in data.get("matches", [])]
+        )

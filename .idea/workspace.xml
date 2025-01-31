@@ -6,10 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="260008cc-a027-4c76-9e97-07af7ef236dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/Match_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Match_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/Player_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Player_controller.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/Tournement_Controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Tournement_Controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/save_to_JSON.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/save_to_JSON.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Match.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Match.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Round.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Round.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Tournament.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Tournament.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/all_players_view.py" beforeDir="false" afterPath="$PROJECT_DIR$/View/all_players_view.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +77,7 @@
       <option name="presentableId" value="Default" />
       <updated>1738162146018</updated>
       <workItem from="1738162147514" duration="35707000" />
-      <workItem from="1738322028342" duration="8940000" />
+      <workItem from="1738322028342" duration="10929000" />
     </task>
     <servers />
   </component>

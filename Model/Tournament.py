@@ -18,14 +18,9 @@ class Tournament:
         self.description: str = description
 
     def __str__(self):
-        """Retourne une représentation lisible d'un tournoi."""
-        return (
-            f"\n🏆 Tournoi : {self.name}\n"
-            f"📍 Lieu : {self.location}\n"
-            f"📅 Début : {self.start_date}  |  Fin : {self.end_date}\n"
-            f"🔢 Nombre de rounds : {self.rounds_total}\n"
-            f"📖 Description : {self.description if self.description else 'Aucune description fournie'}\n"
-        )
+        """Retourne une représentation concise du tournoi sur une seule ligne."""
+        return f"🏆 {self.name} | 📍 {self.location} | 📅 {self.start_date} - {self.end_date}"
+
 
     def to_dict(self):
         """Convertit l'objet tournoi en dictionnaire pour JSON"""
@@ -43,3 +38,25 @@ class Tournament:
             "rounds": [round_.to_dict() for round_ in self.rounds],
             "description": self.description
         }
+
+    @classmethod
+    def from_dict(cls, data: dict) -> "Tournament":
+        """
+        Convertit un dictionnaire JSON en objet `Tournament`.
+
+        Args:
+            data (dict): Dictionnaire représentant un tournoi.
+
+        Returns:
+            Tournament: Instance de la classe `Tournament`.
+        """
+        return cls(
+            name=data["name"],
+            location=data["location"],
+            start_date=data["start_date"],
+            end_date=data["end_date"],
+            rounds_total=data["rounds_total"],
+            player_list=[Player.from_dict(player) for player in data.get("players", [])],  # Convertir joueurs
+            round_list=[Round.from_dict(round_) for round_ in data.get("rounds", [])],  # Convertir rounds
+            description=data.get("description", "")
+        )

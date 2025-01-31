@@ -7,7 +7,7 @@ def all_players_view():
 
     Cette vue récupère la liste des joueurs via `PlayerController.display_players()` et l'affiche.
     """
-    players = PlayerController.display_players()
+    players = PlayerController.get_all_players()
 
     if not players:
         print("\nAucun joueur enregistré.")

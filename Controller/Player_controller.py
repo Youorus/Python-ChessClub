@@ -15,7 +15,7 @@ class PlayerController:
         return
 
     @staticmethod
-    def display_players() -> List[Player]:
+    def get_all_players() -> List[Player]:
         """
         Récupère et trie les joueurs par ordre alphabétique.
 

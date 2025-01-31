@@ -24,3 +24,21 @@ class Match:
             "player2": f"{self.match[1][0].first_name} {self.match[1][0].last_name}",
             "score2": self.match[1][1]
         }
+
+    @classmethod
+    def from_dict(cls, data: dict) -> "Match":
+        """
+        Convertit un dictionnaire JSON en objet `Match`.
+
+        Args:
+            data (dict): Dictionnaire représentant un match.
+
+        Returns:
+            Match: Instance de la classe `Match`.
+        """
+        return cls(
+            player1=Player.from_dict(data["player1"]),
+            score1=data["score1"],
+            player2=Player.from_dict(data["player2"]),
+            score2=data["score2"]
+        )
