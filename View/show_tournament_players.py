@@ -1,0 +1,18 @@
+def show_tournament_players(tournament):
+    """
+    Affiche les joueurs du tournoi sélectionné.
+
+    Args:
+        tournament (Tournament): Tournoi sélectionné.
+    """
+    if not tournament.players:
+        print("\nAucun joueur inscrit dans ce tournoi.")
+        return
+
+    print(f"\n=== Joueurs du Tournoi {tournament.name} ===\n")
+    for i, player in enumerate(tournament.players, start=1):
+        print(f"{i}. {player.first_name} {player.last_name} (ID: {player.national_id})")
+
+    input("\nAppuyez sur Entrée pour revenir au menu...")
+
+

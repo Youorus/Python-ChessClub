@@ -1,3 +1,6 @@
+from View.all_tournement_view import select_tournament
+
+
 def tournament_details_menu():
     """
     Menu permettant de voir les joueurs ou les rounds d'un tournoi spécifique.
