@@ -7,8 +7,15 @@
     <list default="true" id="260008cc-a027-4c76-9e97-07af7ef236dd" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/Player_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Player_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Tournement_Controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Tournement_Controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Execption/player_execption.py" beforeDir="false" afterPath="$PROJECT_DIR$/Execption/player_execption.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Execption/tournement_execption.py" beforeDir="false" afterPath="$PROJECT_DIR$/Execption/tournement_execption.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Match.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Match.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Player.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Model/Round.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Round.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Model/Tournament.py" beforeDir="false" afterPath="$PROJECT_DIR$/Model/Tournament.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Validator/player_validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/Validator/player_validation.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Validator/tournement_validator.py" beforeDir="false" afterPath="$PROJECT_DIR$/Validator/tournement_validator.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,29 +32,32 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2sJ870JXb9PkcIcupl3VTXOGDXN" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Joueur.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Controller",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Joueur.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Match_controller.executor&quot;: &quot;Run&quot;,
+    &quot;Python.home_view.executor&quot;: &quot;Run&quot;,
+    &quot;Python.menu_view.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;View&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -69,7 +79,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1738162146018</updated>
-      <workItem from="1738162147514" duration="13839000" />
+      <workItem from="1738162147514" duration="35707000" />
+      <workItem from="1738322028342" duration="5818000" />
     </task>
     <servers />
   </component>
@@ -77,6 +88,9 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Club_Echec$menu_view.coverage" NAME="menu_view Coverage Results" MODIFIED="1738330943706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/View" />
     <SUITE FILE_PATH="coverage/Club_Echec$Joueur.coverage" NAME="Joueur Coverage Results" MODIFIED="1738162476220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Model" />
+    <SUITE FILE_PATH="coverage/Club_Echec$Match_controller.coverage" NAME="Match_controller Coverage Results" MODIFIED="1738282438355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Controller" />
+    <SUITE FILE_PATH="coverage/Club_Echec$home_view.coverage" NAME="home_view Coverage Results" MODIFIED="1738264133222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/View" />
   </component>
 </project>

@@ -11,11 +11,13 @@ def validate_national_id(national_id: str) -> str:
         raise NationalIdInvalidException()
     return national_id
 
+
 def validate_name(name: str) -> str:
     """Vérifie que le nom ou prénom ne contient que des lettres, accents et tirets."""
     if not re.match(r"^[A-Za-zÀ-ÖØ-öø-ÿ-]{2,50}$", name):
         raise NameInvalidException(name)
     return name.capitalize()  # Met la première lettre en majuscule
+
 
 def validate_dob(dob: str) -> str:
     """Vérifie que la date de naissance est valide (format: JJ/MM/AAAA) et n'est pas dans le futur."""
